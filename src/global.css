@@ -1,0 +1,50 @@
+@media(max-width: 670px) {
+    .stepperresponsive .mantine-qo482m {
+        flex-direction: row;
+    }
+
+    .stepperresponsive .mantine-1jsemyb {
+        margin-left: 0;
+        width: 0.125rem;
+        min-height: 0.2rem;
+        margin-right: 3px;
+        margin-top: calc(2.625rem / 2);
+        margin-bottom: calc(0.625rem - 0.125rem);
+    }
+
+    .stepperresponsive .mantine-19ql4n2 {
+        margin-left: 0;
+        width: 0.125rem;
+        min-height: 0.2rem;
+        margin-right: 3px;
+        margin-top: calc(2.625rem / 2);
+        margin-bottom: calc(0.625rem - 0.125rem);
+    }
+}
+
+.stepperresponsive .mantine-Paper-root {
+    overflow: inherit;
+}
+
+.hidestepper .mantine-Stepper-steps {
+    display: none;
+}
+
+.mantine-Paper-root {
+    overflow: inherit;
+}
+
+.mantine-r3llcj {
+    padding-left: 0;
+}
+
+@media(max-width: 426px) {
+    .mantine-Paper-root {
+        overflow: scroll;
+    }
+
+}
+
+body {
+    font-family: 'FontName', sans-serif;
+  }
