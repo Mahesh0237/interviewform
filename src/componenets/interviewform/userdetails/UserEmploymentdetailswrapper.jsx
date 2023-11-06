@@ -105,27 +105,25 @@ function UserEmploymentdetailswrapper() {
             closeOnClickOutside: false,
             closeOnEscape: false,
             zIndex: 999999999999999
-        });
-
-
+        })
     }, [])
 
     const handleNext = () => {
         if (userEmploymentData !== null) {
             // dispatch(userMobile(null))
-            navigate('/preview')
+            navigate('/candidate_resume')
         } else {
             alert('please upload the experience details')
         }
     }
 
     return (
-        <Container py={50}>
+        <>
             <Card withBorder >
                 <Card.Section inheritPadding withBorder py="md">
                     <Group position='apart'>
                         <Text color='rgb(255, 0, 0)' size={18} mb={3} weight={600}>Employment Details</Text>
-                        <Button color="dark" size="xs" onClick={openEmploymentModal}>Add     New</Button>
+                        <Button color="dark" size="xs" onClick={openEmploymentModal}>Add New</Button>
                     </Group>
                 </Card.Section>
                 <Card.Section inheritPadding withBorder py="md">
@@ -224,8 +222,8 @@ function UserEmploymentdetailswrapper() {
                             :
                             <Alert color="orange">
                                 <Group>
-                                    No Employment details
-                                    <Button size="xs" onClick={openEmploymentModal} variant="light">Update Employment details</Button>
+                                    <Text size={14}>No Employment details</Text>
+                                    <Button size="xs" onClick={openEmploymentModal} variant="default">Update Employment details</Button>
                                 </Group>
                             </Alert>
                     }
@@ -276,7 +274,7 @@ function UserEmploymentdetailswrapper() {
                     />
                 }
             </Modal>
-        </Container>
+        </>
     )
 }
 

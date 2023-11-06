@@ -277,42 +277,42 @@ function Candidatedetails() {
         }
     }, [candidateDetails])
 
-    useEffect(() => {
-        const handleBeforeUnload = (e) => {
-            if (
-                firstName ||
-                lastName ||
-                email ||
-                phoneCode !== 'India' ||
-                phoneNumber ||
-                gender ||
-                marritalStatus ||
-                qualification ||
-                profession ||
-                professionsubtype ||
-                experience ||
-                latestIndustry ||
-                latestDepartment ||
-                latestDesignation ||
-                currentCtc ||
-                currentCtcSalary ||
-                expectedCtc ||
-                expectedCtcSalary ||
-                languages
-            ) {
-                // Display a confirmation message to the user
-                e.preventDefault()
-                e.returnValue = '';
-            }
-        }
+    // useEffect(() => {
+    //     const handleBeforeUnload = (e) => {
+    //         if (
+    //             firstName ||
+    //             lastName ||
+    //             email ||
+    //             phoneCode !== 'India' ||
+    //             phoneNumber ||
+    //             gender ||
+    //             marritalStatus ||
+    //             qualification ||
+    //             profession ||
+    //             professionsubtype ||
+    //             experience ||
+    //             latestIndustry ||
+    //             latestDepartment ||
+    //             latestDesignation ||
+    //             currentCtc ||
+    //             currentCtcSalary ||
+    //             expectedCtc ||
+    //             expectedCtcSalary ||
+    //             languages
+    //         ) {
+    //             // Display a confirmation message to the user
+    //             e.preventDefault()
+    //             e.returnValue = '';
+    //         }
+    //     }
 
-        window.addEventListener('beforeunload', handleBeforeUnload)
+    //     window.addEventListener('beforeunload', handleBeforeUnload)
 
-        return () => {
-            // Remove the event listener when the component unmounts
-            window.removeEventListener('beforeunload', handleBeforeUnload)
-        }
-    }, [firstName, lastName, email, phoneCode, phoneNumber, gender, marritalStatus, qualification, profession, professionsubtype, experience, latestDepartment, latestDesignation, latestIndustry, currentCtc, currentCtcSalary, expectedCtc, expectedCtcSalary, languages])
+    //     return () => {
+    //         // Remove the event listener when the component unmounts
+    //         window.removeEventListener('beforeunload', handleBeforeUnload)
+    //     }
+    // }, [firstName, lastName, email, phoneCode, phoneNumber, gender, marritalStatus, qualification, profession, professionsubtype, experience, latestDepartment, latestDesignation, latestIndustry, currentCtc, currentCtcSalary, expectedCtc, expectedCtcSalary, languages])
 
     const createdcnd = () => {
         setIsLoadiingoverLayEffect(true)
@@ -450,12 +450,11 @@ function Candidatedetails() {
             languages
         })
             .then((res) => {
-                console.log('candidate details posted successfully')
                 setIsLoadiingoverLayEffect(false)
                 navigate('/address')
                 notifications.show({
                     title: 'Success',
-                    message: 'Successfully stored data!',
+                    message: 'Profile Details Updated!',
                     color: 'green',
                     zIndex: 9999999,
                 })
@@ -476,7 +475,7 @@ function Candidatedetails() {
 
     return (
         <>
-            <Card withBorder mt={20}>
+            <Card withBorder >
                 <Card.Section inheritPadding py={10}>
                     <Text weight={600} size={20} color='rgb(255, 0, 0)'>Personal Details:</Text>
                 </Card.Section>
@@ -760,7 +759,7 @@ function Candidatedetails() {
                 </Card.Section>
                 <Card.Section inheritPadding pt={10}>
                     <Group position="right" >
-                        <Button color="teal" onClick={createdcnd}>Next step</Button>
+                        <Button color="dark" onClick={createdcnd}>Next</Button>
                     </Group>
                 </Card.Section>
                 <LoadingOverlay visible={isLoadingoverlayEffect} />

@@ -5,6 +5,7 @@ import { getDatabase, onValue, ref, set } from 'firebase/database';
 import Monthyearpicklerwrapper from '../../shared/monthyearpickler/Monthyearpicklerwrapper';
 import moment from 'moment';
 import app from '../../../../firebase';
+import { notifications } from '@mantine/notifications';
 function generateUniqueId() {
     const array = new Uint32Array(1);
     window.crypto.getRandomValues(array);
@@ -220,7 +221,12 @@ function Educationwrapper({ refresherEducationData, closeEducationModal, mobileN
         })
             .then((res) => {
                 setLoadingEffect(false)
-                console.log('user education data posted successfully')
+                notifications.show({
+                    title: 'Success',
+                    message: 'Education Details are added!',
+                    color: 'green',
+                    zIndex: 9999999,
+                })
                 refresherEducationData()
                 closeEducationModal()
             })

@@ -193,7 +193,7 @@ function EmploymentModal({ closeEmploymentModal, refresherEmploymentData, mobile
                 console.log('user employment data posted successfully')
                 notifications.show({
                     title: 'Success',
-                    message: 'your data stored successfully! 🤥',
+                    message: 'employment details are added! 🤥',
                     color: 'green',
                     zIndex: 9999999,
                 })
@@ -203,6 +203,12 @@ function EmploymentModal({ closeEmploymentModal, refresherEmploymentData, mobile
             .catch((error) => {
                 console.log('user employment data posting failed ', error)
                 setIsLoadingoverlayEffect(false)
+                notifications.show({
+                    title: 'Failed',
+                    message: 'Error! 🤥',
+                    color: 'red',
+                    zIndex: 9999999,
+                })
             })
     }
 

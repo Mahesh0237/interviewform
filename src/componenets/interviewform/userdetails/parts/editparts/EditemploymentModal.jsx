@@ -186,7 +186,7 @@ function EditemploymentModal({ closeEditEmploymentModal, refresherEmploymentData
                 console.log('user employment data updated successfully')
                 notifications.show({
                     title: 'Success',
-                    message: 'your data stored successfully! 🤥',
+                    message: 'Employment details are updated!',
                     color: 'green',
                     zIndex: 9999999,
                 })
@@ -195,6 +195,12 @@ function EditemploymentModal({ closeEditEmploymentModal, refresherEmploymentData
             })
             .catch((error) => {
                 console.log('user employment data posting failed ', error)
+                notifications.show({
+                    title: 'Failed',
+                    message: 'Error!',
+                    color: 'red',
+                    zIndex: 9999999,
+                })
                 setIsLoadingoverlayEffect(false)
             })
     }

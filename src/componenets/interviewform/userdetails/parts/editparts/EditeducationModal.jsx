@@ -4,6 +4,7 @@ import { getDatabase, onValue, ref, set } from 'firebase/database';
 import moment from 'moment';
 import Monthyearpicklerwrapper from '../../../shared/monthyearpickler/Monthyearpicklerwrapper';
 import app from '../../../../../firebase';
+import { notifications } from '@mantine/notifications';
 
 function EditeducationModal({ refresherEducationData, closeEditEducationModal, editId, mobileNum }) {
     const db = getDatabase(app)
@@ -205,7 +206,12 @@ function EditeducationModal({ refresherEducationData, closeEditEducationModal, e
         })
             .then((res) => {
                 setLoadingEffect(false)
-                console.log('user education data posted successfully')
+                notifications.show({
+                    title: 'Success',
+                    message: 'Education Details are updated!',
+                    color: 'green',
+                    zIndex: 9999999,
+                })
                 refresherEducationData()
                 closeEditEducationModal()
             })

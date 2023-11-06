@@ -83,24 +83,24 @@ function Previewdetails() {
 
   }
   const backSubmit = () => {
-    if (userEmploymentData === null) {
-      navigate('/educationdetails')
-    } else {
-      navigate('/experiencedetails')
-    }
+    // if (userEmploymentData === null) {
+    //   navigate('/educationdetails')
+    // } else {
+    //   navigate('/experiencedetails')
+    // }
+    navigate('/candidate_resume')
   }
-
   return (
     <>
       <Text weight={600} mb={10} size={16}>Preview Details:</Text>
       <Card withBorder>
         <Card.Section inheritPadding py={10}>
-          <Text size={18} weight={600} color='#f00'>Profile Details:</Text>
+          <Text size={16} weight={600} color='#f00'>Profile Details:</Text>
         </Card.Section>
         <Card.Section inheritPadding py={10} withBorder>
-          <Card withBorder inheritPadding>
-            {
-              profileDetails ?
+          {
+            profileDetails ?
+              <Card withBorder inheritPadding>
                 <Grid>
                   <Grid.Col xs={4} sm={4} md={4}>
                     <Text size={15} weight={600} color='#4A0058'>First Name: </Text>
@@ -178,15 +178,15 @@ function Previewdetails() {
                     ))}
                   </Grid.Col>
                 </Grid>
-                :
-                <Alert variant="light" color='yellow'>
-                  <Text size={14}>No Data</Text>
-                </Alert>
-            }
-          </Card>
+              </Card>
+              :
+              <Alert variant="light" color='yellow'>
+                <Text size={14}>No Data</Text>
+              </Alert>
+          }
         </Card.Section>
         <Card.Section inheritPadding py={10}>
-          <Text size={18} weight={600} color='#f00'>Address Details:</Text>
+          <Text size={16} weight={600} color='#f00'>Address Details:</Text>
         </Card.Section>
         <Card.Section inheritPadding py={10} withBorder>
           {
@@ -212,10 +212,9 @@ function Previewdetails() {
                 <Text size={14}>No Data</Text>
               </Alert>
           }
-
         </Card.Section>
         <Card.Section inheritPadding py={10} >
-          <Text size={18} weight={600} color='#f00'>Education Details:</Text>
+          <Text size={16} weight={600} color='#f00'>Education Details:</Text>
         </Card.Section>
         <Card.Section inheritPadding py="md" withBorder>
           {
@@ -296,7 +295,7 @@ function Previewdetails() {
           }
         </Card.Section>
         <Card.Section inheritPadding py={10} >
-          <Text size={18} weight={600} color='#f00'>Employment Details:</Text>
+          <Text size={16} weight={600} color='#f00'>Employment Details:</Text>
         </Card.Section>
         <Card.Section inheritPadding py="md" withBorder>
           {

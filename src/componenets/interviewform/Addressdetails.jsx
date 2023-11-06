@@ -137,11 +137,10 @@ function Addressdetails() {
             city
         })
             .then((res) => {
-                console.log('address details posted successfully')
                 setIsLoadiingoverLayEffect(false)
                 notifications.show({
                     title: 'Success',
-                    message: 'Successfully stored data!',
+                    message: 'Address Details Updated!',
                     color: 'green',
                     zIndex: 9999999,
                 })
@@ -161,9 +160,9 @@ function Addressdetails() {
 
     return (
         <section className='addressdetails'>
-            <Card withBorder mt={20} >
+            <Card withBorder >
                 <Card.Section inheritPadding py={10} >
-                    <Text weight={600} size={20} color='rgb(255, 0, 0)'>Address Details:{JSON.stringify(newPhonenum)}</Text>
+                    <Text weight={600} size={20} color='rgb(255, 0, 0)'>Address Details:</Text>
                 </Card.Section>
                 <Card.Section inheritPadding py={20} withBorder>
                     <Grid>
@@ -212,7 +211,7 @@ function Addressdetails() {
                 <Card.Section inheritPadding pt={10}>
                     <Group position="apart">
                         <Button variant="default" component='a' href='/' >Back</Button>
-                        <Button color='teal' onClick={createaddress}>Next step</Button>
+                        <Button color='dark' onClick={createaddress}>Next</Button>
                     </Group>
                 </Card.Section>
                 <LoadingOverlay visible={isLoadingoverlayEffect} />

@@ -132,7 +132,7 @@ function UserEducationdetailswrapper() {
     const handleNext = () => {
         if (userExpStatus === "Fresher") {
             if (userEducationData !== null) {
-                navigate('/preview')
+                navigate('/candidate_resume')
             } else {
                 alert('please upload the education details')
             }
@@ -144,7 +144,6 @@ function UserEducationdetailswrapper() {
             }
         }
     }
-
     return (
         <>
             <Card withBorder >
@@ -265,8 +264,8 @@ function UserEducationdetailswrapper() {
                             <>
                                 <Alert color="orange">
                                     <Group>
-                                        No Education details
-                                        <Button size="xs" onClick={openEducationalModal} variant="light">Update Education</Button>
+                                        <Text size={14} >No Education</Text>
+                                        <Button size="xs" onClick={openEducationalModal} variant="default">Update Education</Button>
                                     </Group>
                                 </Alert>
                                 <Alert variant="light" withBorder mt={10}>
@@ -279,7 +278,7 @@ function UserEducationdetailswrapper() {
                 <Card.Section inheritPadding py="sm">
                     <Group position='apart'>
                         <Button variant='default' component='a' href='/address'>Back </Button>
-                        <Button color="teal" onClick={handleNext}>Next Step</Button>
+                        <Button color="dark" onClick={handleNext}>Next</Button>
                     </Group>
                 </Card.Section>
             </Card>
